@@ -221,6 +221,7 @@ class PointMaze2D(gym.GoalEnv):
     self.ax.draw_artist(self.scatter)
     self.ax.draw_artist(self.goal_scatter)
     self.fig.canvas.blit(self.ax.bbox)
+    self.fig.savefig("/home/dvasilev/mrl_envs/example.png")
     image_from_plot = np.frombuffer(self.fig.canvas.tostring_rgb(), dtype=np.uint8)
     image_from_plot = image_from_plot.reshape(self.fig.canvas.get_width_height()[::-1] + (3,))
     return image_from_plot
